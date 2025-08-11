@@ -1,0 +1,93 @@
+@use "../utils/variables" as v;
+@use "../utils/functions" as f;
+@use "../utils/mixins" as m;
+
+.main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @media (min-width: 1051px) {
+        min-height: calc(100vh - 120px);
+    }
+
+    @media (min-width: 580px) and (max-width: 1050px) {
+        min-height: calc(100vh - 171px);
+    }   
+
+    @media(max-width: 579px) {
+        min-height: calc(100vh - 230px);
+    }
+        
+    padding: 0px 55px 25px 55px;
+
+    background-color: f.getColor('bg-color');
+    display: grid;
+    justify-items: center;
+
+    @media (min-width: 600px) and (max-width: 800px) {
+        padding: 0px 12px 20px 12px;
+    }
+    @media (max-width: 599px) {
+        padding: 0px 8px 15px 8px;
+    }
+}
+
+.principal {
+    position: relative;
+    width: 95%;
+    height: 100%;
+    // min-height: 1200px;
+    max-width: 1255px;
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+
+    @media (min-width: 1071px) {
+        max-height: 755px;
+    }
+    
+    @media (max-width: 1070px) {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    @media (min-width: 940px) and (max-width: 1070px) {
+        max-height: 1200px;
+    }
+
+    &--not-empty {
+        @media (max-width: 615px) {
+            padding-top: 180px;
+        }
+    }
+}
+
+.main-centered {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+
+.secondary-container {
+    width: 100%;
+
+    @media (min-width: 1071px) and (max-width: 1180px) {
+        max-width: 57.3%;
+    }
+
+
+    flex-basis:  57%;
+    flex-shrink: 0;
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}

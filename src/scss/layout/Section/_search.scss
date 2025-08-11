@@ -1,0 +1,81 @@
+
+@use "../../utils/variables" as v;
+@use "../../utils/functions" as f;
+@use "../../utils/mixins" as m;
+
+.search {
+    width: 100%;
+    height: 280px;
+    padding: 5px 25px;
+    background-color: f.getColor('bg-card');
+    
+    flex-basis: 38%;
+    flex-grow: 1;
+
+    @media (max-width: 1070px) {
+        height: 200px;
+        flex-basis: 100%;
+    }
+
+    &-location {
+        position: relative;
+        width: 100%;
+        height: 145px;
+        overflow: hidden;
+        border-radius: 15px;
+
+        @media (max-width: 1070px) {
+            height: 180px;
+        }
+
+        &__shadow {
+            z-index: 15;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            filter: opacity(45%);
+        }
+
+        &__text {
+            z-index: 50;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 350px;
+            font-size: 2rem;
+            text-align: center;
+            font-weight: 700;
+            color: f.getColor('text-color-contrast');
+        }
+    }
+}
+
+.search-date {
+    width: max-content;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    
+    @media (max-width: 1070px) {
+        display: none;
+    }
+
+    &-container {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__main-text {
+        font-weight: 700;
+    }
+
+    &__secondary-text {
+        font-weight: 300;
+        color: f.getColor('gray');
+    }
+    
+}

@@ -1,0 +1,39 @@
+
+@use "../../utils/variables" as v;
+@use "../../utils/functions" as f;
+@use "../../utils/mixins" as m;
+
+.weather {
+    z-index: 10;
+    width: 100%;
+    flex-basis: 59%;
+    height: 280px;
+
+    padding: f.getProperty('padding');
+    color: f.getColor('text-color-contrast');
+
+    border-radius: f.getProperty('border-radius');
+
+    &__properties {
+        width: max-content;
+
+        @media (max-width: 615px) {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    background: rgb(57,200,245);
+    background: linear-gradient(45deg, rgba(57,200,245,1) 0%, rgba(47,144,243,1) 47%);
+
+    @media (max-width: 1070px) {
+        flex-basis: 100%;
+    }
+
+    @media (max-width: 615px) {
+        height: 300px;
+    }
+}

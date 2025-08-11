@@ -1,0 +1,20 @@
+
+@use "../../utils/variables" as v;
+@use "../../utils/functions" as f;
+@use "../../utils/mixins" as m;
+
+.today-highlight {
+    width: 100%;
+    flex-basis: 39.9%;
+    max-width: 450px;
+    padding-top: 20px;
+    flex-shrink: 1;
+    color: f.getColor('text-color-contrast');
+
+    @media (max-width: 1070px) {
+        max-width: none;
+        flex-basis: 100%;
+    }
+
+  
+}
